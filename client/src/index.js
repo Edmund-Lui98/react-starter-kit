@@ -2,11 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import Home from "./home";
+import RoutesHome from "./routes";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Home />
+    <RoutesHome />
   </React.StrictMode>,
   document.getElementById("root")
 );
