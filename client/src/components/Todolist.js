@@ -26,11 +26,25 @@ function Todolist() {
         })
     }
 
+    const removeTodo = id => {
+        const removeArr = [...todos].filter(todo => todo.id !== id)
+
+        setTodos(removeArr);
+    }
+
+    // const updatedTodos = (todoId, newValue) => {
+    //     if (!todo.text || /^\s*$/.test(todo.text)) {
+    //         return
+    //     }
+
+    //     setTodos()
+    // }
+
     return (
         <div>
             <h1>What do you want to do today?</h1>
             <Todoform onSubmit={addTodo}/>
-            <Todo todos={todos} completeTodo={completeTodo}/>            
+            <Todo todos={todos} completeTodo={completeTodo} removeTodo={removeTodo}/>            
         </div>
     )
 }
