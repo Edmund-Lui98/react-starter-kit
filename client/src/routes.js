@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Route, Routes,Switch, Link } from "react-router-dom";
-import App from "./App";
-import Home from "./home";
+import App from "./pages/chatApp/App";
+import Home from "./pages/home";
+import Todo from "./pages/todoApp/TodoApp";
 
 function RoutesHome() {
 
@@ -10,6 +11,7 @@ function RoutesHome() {
           <Routes>
             <Route path="/chat" element={<App/>}/>
             <Route path="/" element={<Home/>}/>
+            <Route path="/todo" element={<Todo/>}/>
           </Routes>
         </Router>
     </div>
