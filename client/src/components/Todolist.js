@@ -32,19 +32,19 @@ function Todolist() {
         setTodos(removeArr);
     }
 
-    // const updatedTodos = (todoId, newValue) => {
-    //     if (!todo.text || /^\s*$/.test(todo.text)) {
-    //         return
-    //     }
+    const updateTodos = (todoId, newValue) => {
+        if (!newValue.text || /^\s*$/.test(newValue.text)) {
+            return
+        }
 
-    //     setTodos()
-    // }
+        setTodos(prev => prev.map(item => item.id === todoId ? newValue : item));
+    }
 
     return (
         <div>
             <h1>What do you want to do today?</h1>
             <Todoform onSubmit={addTodo}/>
-            <Todo todos={todos} completeTodo={completeTodo} removeTodo={removeTodo}/>            
+            <Todo todos={todos} completeTodo={completeTodo} removeTodo={removeTodo} updateTodo={updateTodos}/>            
         </div>
     )
 }
